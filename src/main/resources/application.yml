@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+application:
+  security:
+    jwt:
+      access-token:
+        secret-key: abcdefghijkl322fdsadasdasdadasdasdasdasdadas32qrstuvwxyz
+        expiration: 86400000 # 1 dia
+      refresh-token:
+        secret-key: zyxwvutsrqponmlkjihgfedcbadasdaddas434da3433dasdad343121
+        expiration: 604800000 # 7 dias
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/simple_jwt
+    username: postgres
+    password: kaneth
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
